@@ -1,0 +1,41 @@
+@import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
+
+//variables
+:root {
+  --clr-body: #0b0a0f;
+  --clr-box: #24232b;
+  --clr-dark: #18171f;
+  --clr-dark-green: #43734a;
+  --clr-light-green: #a4ffaf;
+  --clr-muted: #504f57;
+  --clr-white: #ffffff;
+  --box-padding: 1rem 1.5rem;
+}
+
+//global
+body {
+  background-color: var(--clr-body);
+  font-family: "Roboto Mono", monospace;
+}
+
+body,
+#app {
+  height: 100vh;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr minmax(10rem, 1.2fr) 1fr;
+  align-items: center;
+}
+
+::selection {
+  background-color: var(--clr-light-green);
+  color: var(--clr-dark);
+}
+
+.disabled {
+  opacity: 0.4;
+  filter: grayscale(0.7);
+}
