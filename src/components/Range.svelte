@@ -16,14 +16,13 @@
   $: width = ((containerWidth - thumbSize + 2) * (value - min)) / (max - min);
 </script>
 
-<div class="range">
+<div class="range" class:disabled>
   <label for={id} class="range__label">
     {label} <span class="range__indicator">{value}</span>
   </label>
   <div
     bind:clientWidth={containerWidth}
     class="range__container"
-    class:disabled
     style="--width:{width}px"
   >
     <input
@@ -99,12 +98,12 @@
 
   .range {
     display: flex;
+    height: 4em;
     flex-flow: column wrap;
     row-gap: 0.8em;
     &__label {
       @include flex-space-between;
       width: 100%;
-      font-size: 0.9rem;
     }
     &__indicator {
       font-size: 1.5rem;

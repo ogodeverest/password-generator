@@ -35,7 +35,7 @@
       height: 2.5em;
       flex: 1 1 90%;
       padding: var(--box-padding);
-      font-size: 1.5rem;
+      font-size: max(1.7vw, 1rem);
       background-color: transparent;
       color: var(--clr-muted);
       border: none;

@@ -17,6 +17,7 @@
 body {
   background-color: var(--clr-body);
   font-family: "Roboto Mono", monospace;
+  letter-spacing: 1.10px;
 }
 
 body,
@@ -26,7 +27,7 @@ body,
 
 #app {
   display: grid;
-  grid-template-columns: 1fr minmax(10rem, 1.2fr) 1fr;
+  grid-template-columns: minmax(1rem,1fr) minmax(20rem, 1.2fr) minmax(1rem,1fr);
   align-items: center;
 }
 
@@ -39,3 +40,4 @@ body,
   opacity: 0.4;
   filter: grayscale(0.7);
 }
+
