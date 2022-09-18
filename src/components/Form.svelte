@@ -2,6 +2,7 @@
   import Range from "./Range.svelte";
   import Checkbox from "./Checkbox.svelte";
   import type Settings from "src/models/Settings.interface";
+  import Meter from "./Meter.svelte";
 
   export let settings: Settings;
 </script>
@@ -39,6 +40,7 @@
     name="symbols"
     bind:checked={settings.symbols}
   />
+  <Meter />
 </div>
 
 <style lang="scss">

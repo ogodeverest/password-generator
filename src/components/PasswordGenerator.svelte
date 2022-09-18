@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PasswordDisplay from "./PasswordDisplay.svelte";
+  import Display from "./Display.svelte";
   import Form from "./Form.svelte";
   import type Settings from "../models/Settings.interface";
 
@@ -15,7 +15,7 @@
 </script>
 
 <main class="password-generator">
-  <PasswordDisplay value="P45$w0rd!!!" />
+  <Display value="P45$w0rd!!!" />
   <Form bind:settings />
 </main>
 

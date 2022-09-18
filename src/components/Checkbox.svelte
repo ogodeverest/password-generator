@@ -78,9 +78,6 @@
       &:checked::after {
         opacity: 1;
       }
-
-      &:disabled {
-      }
     }
   }
 </style>

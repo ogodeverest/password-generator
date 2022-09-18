@@ -1,3 +1,5 @@
+$breakpoint-tablet : 768px;
+
 @mixin flex-space-between {
   display: flex;
   justify-content: space-between;
@@ -12,4 +14,12 @@
 
 @mixin default-transition($property) {
   transition: 250ms ease-in-out $property;
+}
+
+@mixin media-query($props){
+
+}
+
+@media (max-width: $breakpoint-tablet) {
+  
 }
