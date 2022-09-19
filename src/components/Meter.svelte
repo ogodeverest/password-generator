@@ -7,48 +7,56 @@
     <p class="meter__strength">Medium</p>
     <div class="meter__units">
       {#each new Array(4) as _, index}
-        <div class={`meter__unit meter__unit--${index}`} />
+        <div
+          class={`meter__unit meter__unit--${index} meter__unit--${
+            index - 3 !== 0 ? "active" : ""
+          }`}
+        />
       {/each}
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  @import "../scss/mixins";
+
   .meter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-space-between;
     background-color: var(--clr-dark);
-    height: 3.5em;
-    padding: 2em;
-    //TODO : SMALL SCREEN padding:1em;
+    height: 3em;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 1.8em;
     text-transform: uppercase;
-    font-size: 1.1rem;
 
     &__label {
-      color: var(--clr-muted);
+      color: var(--clr-grey);
     }
 
     &__indicator {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      flex: 0 0 31%;
     }
 
     &__strength {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      margin-right: 0.3em;
     }
 
     &__units {
-      display: flex;
-      justify-content: space-between;
+      @include flex-space-between;
     }
+
     &__unit {
-      width: 8px;
+      width: 9px;
       height: 1.5em;
       margin-left: 6px;
-      border: 2px solid var(--clr-yellow);
+      border: 1.8px solid var(--clr-white);
+      background-color: transparent;
+    }
+
+    &__unit--active {
+      border-color: var(--clr-yellow);
       background-color: var(--clr-yellow);
     }
   }

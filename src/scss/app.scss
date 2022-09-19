@@ -1,24 +1,23 @@
 @import "./reset";
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap");
 //variables
 :root {
-  --clr-body: #0b0a0f;
+  --clr-body: #100f15;
   --clr-box: #24232b;
   --clr-dark: #18171f;
-  --clr-dark-green: #43734a;
+  --clr-dark-green: #1f4027;
   --clr-light-green: #a4ffaf;
-  --clr-muted: #504f57;
+  --clr-grey: #686673;
+  --clr-light-grey: #e6e5ea;
   --clr-white: #ffffff;
-  --clr-yellow:#face5e;
-  --box-padding: 1rem 1.5rem;
+  --clr-yellow: #f2c063;
 }
 
 //global
 body {
   background-color: var(--clr-body);
   font-family: "Roboto Mono", monospace;
-  letter-spacing: 1.10px;
+  letter-spacing: 1.1px;
 }
 
 body,
@@ -28,7 +27,10 @@ body,
 
 #app {
   display: grid;
-  grid-template-columns: minmax(1rem,1fr) minmax(20rem, 1.2fr) minmax(1rem,1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(22rem, 1.2fr) minmax(
+      1rem,
+      1fr
+    );
   align-items: center;
 }
 
@@ -41,4 +43,3 @@ body,
   opacity: 0.4;
   filter: grayscale(0.7);
 }
-

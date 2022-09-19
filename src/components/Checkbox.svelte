@@ -21,7 +21,7 @@
 <style lang="scss">
   @import "../scss/mixins";
 
-  $input-size: 1.15em;
+  $input-size: 1.17em;
   @mixin border-color($color) {
     border: 1.5px solid $color;
   }
@@ -52,6 +52,8 @@
       &::before {
         content: "";
         opacity: 0;
+        width: 100%;
+        height: 100%;
         position: absolute;
         inset: 0;
         background-color: var(--clr-light-green);

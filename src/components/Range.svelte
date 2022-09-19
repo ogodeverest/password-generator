@@ -65,7 +65,8 @@
     width: var(--thumb-size);
     margin-top: -9px;
     border-radius: 100%;
-    background-color: var(--clr-white);
+    background-color: var(--clr-light-grey);
+    border: none;
     cursor: pointer;
   }
 
@@ -98,9 +99,9 @@
 
   .range {
     display: flex;
-    height: 4em;
+    height: 5em;
     flex-flow: column wrap;
-    row-gap: 0.8em;
+    row-gap: 0.9em;
     &__label {
       @include flex-space-between;
       width: 100%;
@@ -118,7 +119,6 @@
         @include absolute-positioned;
         width: 100%;
         @include track-height;
-        border-radius: $border-radius-track;
         background-color: var(--clr-dark);
         cursor: pointer;
       }
@@ -128,8 +128,6 @@
         @include absolute-positioned;
         width: var(--width);
         @include track-height;
-        border-top-left-radius: $border-radius-track;
-        border-bottom-left-radius: $border-radius-track;
         background-color: var(--clr-light-green);
       }
     }

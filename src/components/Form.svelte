@@ -1,13 +1,14 @@
 <script lang="ts">
   import Range from "./Range.svelte";
   import Checkbox from "./Checkbox.svelte";
-  import type Settings from "src/models/Settings.interface";
   import Meter from "./Meter.svelte";
+  import Button from "./Button.svelte";
+  import type Settings from "src/models/Settings.interface";
 
   export let settings: Settings;
 </script>
 
-<div class="form">
+<form class="form">
   <Range
     min={6}
     max={20}
@@ -41,15 +42,23 @@
     bind:checked={settings.symbols}
   />
   <Meter />
-</div>
+  <Button />
+</form>
 
 <style lang="scss">
+  @import "../scss/mixins";
   .form {
     display: flex;
     flex-direction: column;
     row-gap: 1.3em;
     font-size: 0.9rem;
-    padding: var(--box-padding);
+    padding: 1.7rem;
     background-color: var(--clr-box);
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .form {
+      padding: 1.2rem;
+    }
   }
 </style>

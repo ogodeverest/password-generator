@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let value = "SomePassword";
+  export let value;
 </script>
 
 <div class="password-display">
@@ -8,6 +8,7 @@
     type="text"
     name="password"
     {value}
+    placeholder="P4$5W0rD!"
     readonly
   />
   <button class="password-display__button">
@@ -27,34 +28,32 @@
 <style lang="scss">
   @import "../scss/mixins";
   $svg-size: 1.2em;
+  $padding: 1.2rem 1.7rem;
   .password-display {
     @include flex-space-between;
     background-color: var(--clr-box);
-
+    padding: $padding;
+    height: 4em;
     &__input {
-      height: 2.5em;
-      flex: 1 1 90%;
-      padding: var(--box-padding);
-      font-size: max(1.7vw, 1rem);
+      font-size: max(1.7vw, 1.6rem);
+      max-width: 60%;
       background-color: transparent;
-      color: var(--clr-muted);
+      color: var(--clr-white);
       border: none;
       outline: none;
-      font-weight: 400;
+      font-weight: 500;
       @include default-transition(color);
-      &:focus {
-        color: var(--clr-white);
+      &:placeholder-shown {
+        color: var(--clr-grey);
+        font-size: max(1.7vw, 1rem);
       }
     }
 
     &__button {
       @include flex-center;
-      flex: 1 1 10%;
-      padding: var(--box-padding);
       background-color: transparent;
       border: none;
       cursor: pointer;
-
       svg {
         width: $svg-size;
         height: $svg-size;
