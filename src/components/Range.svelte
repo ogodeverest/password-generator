@@ -63,7 +63,7 @@
     -webkit-appearance: none;
     height: var(--thumb-size);
     width: var(--thumb-size);
-    margin-top: -9px;
+    margin-top: -8px;
     border-radius: 100%;
     background-color: var(--clr-light-grey);
     border: none;
@@ -99,12 +99,11 @@
 
   .range {
     display: flex;
-    height: 5em;
     flex-flow: column wrap;
-    row-gap: 0.9em;
+    height: 6em;
+    row-gap: 1.5em;
     &__label {
       @include flex-space-between;
-      width: 100%;
     }
     &__indicator {
       font-size: 1.5rem;

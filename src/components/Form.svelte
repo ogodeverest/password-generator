@@ -3,16 +3,14 @@
   import Checkbox from "./Checkbox.svelte";
   import Meter from "./Meter.svelte";
   import Button from "./Button.svelte";
-  import type Settings from "src/models/Settings.interface";
-
-  export let settings: Settings;
+  import settings from "../stores";
 </script>
 
 <form class="form">
   <Range
     min={6}
     max={20}
-    bind:value={settings.length}
+    bind:value={$settings.length}
     label="Charachter Length"
     name="length"
     id="length"
@@ -21,25 +19,25 @@
     label="Include Uppercase Letters"
     id="uppercase"
     name="uppercase"
-    bind:checked={settings.uppercase}
+    bind:checked={$settings.uppercase}
   />
   <Checkbox
     label="Include Lowercase Letters"
     id="lowercase"
     name="lowercase"
-    bind:checked={settings.lowercase}
+    bind:checked={$settings.lowercase}
   />
   <Checkbox
     label="Include Numbers"
     id="numbers"
     name="numbers"
-    bind:checked={settings.numbers}
+    bind:checked={$settings.numbers}
   />
   <Checkbox
     label="Include Symbols"
     id="symbols"
     name="symbols"
-    bind:checked={settings.symbols}
+    bind:checked={$settings.symbols}
   />
   <Meter />
   <Button />
@@ -50,9 +48,9 @@
   .form {
     display: flex;
     flex-direction: column;
-    row-gap: 1.3em;
-    font-size: 0.9rem;
+    row-gap: 1em;
     padding: 1.7rem;
+    font-size: 0.9rem;
     background-color: var(--clr-box);
   }
 

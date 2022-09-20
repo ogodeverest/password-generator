@@ -27,21 +27,25 @@
 
 <style lang="scss">
   @import "../scss/mixins";
+
   $svg-size: 1.2em;
   $padding: 1.2rem 1.7rem;
+
   .password-display {
     @include flex-space-between;
-    background-color: var(--clr-box);
-    padding: $padding;
     height: 4em;
+    padding: $padding;
+    background-color: var(--clr-box);
+
     &__input {
-      font-size: max(1.7vw, 1.6rem);
       max-width: 60%;
-      background-color: transparent;
-      color: var(--clr-white);
       border: none;
       outline: none;
+      font-size: max(1.7vw, 1.6rem);
+      color: var(--clr-white);
       font-weight: 500;
+      background-color: transparent;
+
       @include default-transition(color);
       &:placeholder-shown {
         color: var(--clr-grey);

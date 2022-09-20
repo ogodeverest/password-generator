@@ -1,23 +1,12 @@
 <script lang="ts">
   import Display from "./Display.svelte";
   import Form from "./Form.svelte";
-  import type Settings from "../models/Settings.interface";
-
-  let settings: Settings = {
-    length: 10,
-    uppercase: true,
-    lowercase: true,
-    numbers: true,
-    symbols: false,
-  };
-
-  $: console.log(settings);
 </script>
 
 <main class="password-generator">
   <h1 class="password-generator__title">Password Generator</h1>
   <Display value="PTx1f5DaFX" />
-  <Form bind:settings />
+  <Form />
 </main>
 
 <style lang="scss">

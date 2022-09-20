@@ -19,14 +19,14 @@
 
 <style lang="scss">
   @import "../scss/mixins";
-
   .meter {
     @include flex-space-between;
-    background-color: var(--clr-dark);
     height: 3em;
+    margin-top: 1rem;
+    padding: 1.8em;
     font-size: 1rem;
     font-weight: 400;
-    padding: 1.8em;
+    background-color: var(--clr-dark);
     text-transform: uppercase;
 
     &__label {
@@ -39,8 +39,8 @@
     }
 
     &__strength {
-      font-size: 1.1rem;
       margin-right: 0.3em;
+      font-size: 1.1rem;
     }
 
     &__units {
@@ -48,10 +48,10 @@
     }
 
     &__unit {
-      width: 9px;
-      height: 1.5em;
+      width: 8px;
+      height: 1.4em;
       margin-left: 6px;
-      border: 1.8px solid var(--clr-white);
+      border: 1.4px solid var(--clr-white);
       background-color: transparent;
     }
 
