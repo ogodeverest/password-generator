@@ -1,1 +1,1 @@
-export { default } from "./stores";
+export { default as settings, strength } from "./stores";

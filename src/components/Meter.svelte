@@ -1,16 +1,15 @@
 <script lang="ts">
+  import { strength } from "../stores";
 </script>
 
 <div class="meter">
   <p class="meter__label">Strength</p>
   <div class="meter__indicator">
-    <p class="meter__strength">Medium</p>
+    <p class="meter__strength">{$strength}</p>
     <div class="meter__units">
       {#each new Array(4) as _, index}
         <div
-          class={`meter__unit meter__unit--${index} meter__unit--${
-            index - 3 !== 0 ? "active" : ""
-          }`}
+          class={`meter__unit meter__unit--${index} meter__unit--${$strength}`}
         />
       {/each}
     </div>
@@ -19,6 +18,14 @@
 
 <style lang="scss">
   @import "../scss/mixins";
+
+  $states: "poor", "weak", "medium", "strong";
+
+  @mixin fill-unit($color) {
+    border-color: $color;
+    background-color: $color;
+  }
+
   .meter {
     @include flex-space-between;
     height: 3em;
@@ -55,9 +62,10 @@
       background-color: transparent;
     }
 
-    &__unit--active {
-      border-color: var(--clr-yellow);
-      background-color: var(--clr-yellow);
+    @each $state in $states {
+      &__unit--#{$state} {
+        @include fill-unit(var(--clr-#{$state}));
+      }
     }
   }
 </style>

@@ -3,14 +3,14 @@
   import Checkbox from "./Checkbox.svelte";
   import Meter from "./Meter.svelte";
   import Button from "./Button.svelte";
-  import settings from "../stores";
+  import { settings } from "../stores";
 </script>
 
 <form class="form">
   <Range
     min={6}
     max={20}
-    bind:value={$settings.length}
+    bind:value={$settings.length.value}
     label="Charachter Length"
     name="length"
     id="length"
@@ -19,25 +19,25 @@
     label="Include Uppercase Letters"
     id="uppercase"
     name="uppercase"
-    bind:checked={$settings.uppercase}
+    bind:checked={$settings.uppercase.value}
   />
   <Checkbox
     label="Include Lowercase Letters"
     id="lowercase"
     name="lowercase"
-    bind:checked={$settings.lowercase}
+    bind:checked={$settings.lowercase.value}
   />
   <Checkbox
     label="Include Numbers"
     id="numbers"
     name="numbers"
-    bind:checked={$settings.numbers}
+    bind:checked={$settings.numbers.value}
   />
   <Checkbox
     label="Include Symbols"
     id="symbols"
     name="symbols"
-    bind:checked={$settings.symbols}
+    bind:checked={$settings.symbols.value}
   />
   <Meter />
   <Button />
