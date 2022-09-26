@@ -1,5 +1,9 @@
 <script lang="ts">
   import { strength } from "../stores";
+  import { levels } from "../utils/findStrength";
+
+  const units: string[] = Array.from(levels.keys());
+  $: strengthIndex = units.indexOf($strength);
 </script>
 
 <div class="meter">
@@ -7,9 +11,11 @@
   <div class="meter__indicator">
     <p class="meter__strength">{$strength}</p>
     <div class="meter__units">
-      {#each new Array(4) as _, index}
+      {#each units as unit, index}
         <div
-          class={`meter__unit meter__unit--${index} meter__unit--${$strength}`}
+          class={`meter__unit ${
+            index <= strengthIndex ? `meter__unit--${$strength}` : ""
+          }`}
         />
       {/each}
     </div>

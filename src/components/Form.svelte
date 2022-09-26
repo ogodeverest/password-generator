@@ -1,16 +1,30 @@
 <script lang="ts">
+  import { onDestroy } from "svelte";
   import Range from "./Range.svelte";
   import Checkbox from "./Checkbox.svelte";
   import Meter from "./Meter.svelte";
   import Button from "./Button.svelte";
   import { settings } from "../stores";
+  import type Settings from "../models/Settings.interface";
+
+  let formSettings: Settings;
+
+  const unsubscribe = settings.subscribe((settings: Settings) => {
+    formSettings = settings;
+  });
+
+  onDestroy(unsubscribe);
+
+  function handleSubmit() {
+    settings.set(formSettings);
+  }
 </script>
 
-<form class="form">
+<form class="form" on:submit|preventDefault={handleSubmit}>
   <Range
     min={6}
     max={20}
-    bind:value={$settings.length.value}
+    bind:value={formSettings.length.value}
     label="Charachter Length"
     name="length"
     id="length"
@@ -19,25 +33,25 @@
     label="Include Uppercase Letters"
     id="uppercase"
     name="uppercase"
-    bind:checked={$settings.uppercase.value}
+    bind:checked={formSettings.uppercase.value}
   />
   <Checkbox
     label="Include Lowercase Letters"
     id="lowercase"
     name="lowercase"
-    bind:checked={$settings.lowercase.value}
+    bind:checked={formSettings.lowercase.value}
   />
   <Checkbox
     label="Include Numbers"
     id="numbers"
     name="numbers"
-    bind:checked={$settings.numbers.value}
+    bind:checked={formSettings.numbers.value}
   />
   <Checkbox
     label="Include Symbols"
     id="symbols"
     name="symbols"
-    bind:checked={$settings.symbols.value}
+    bind:checked={formSettings.symbols.value}
   />
   <Meter />
   <Button />

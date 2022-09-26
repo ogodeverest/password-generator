@@ -1,1 +1,1 @@
-export { default as settings, strength } from "./stores";
+export { default as settings, strength, password } from "./stores";

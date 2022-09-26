@@ -1,17 +1,17 @@
 <script lang="ts">
-  export let value;
+  import { password } from "../stores";
 </script>
 
-<div class="password-display">
+<div class="display">
   <input
-    class="password-display__input"
+    class="display__input"
     type="text"
     name="password"
-    {value}
+    bind:value={$password}
     placeholder="P4$5W0rD!"
     readonly
   />
-  <button class="password-display__button">
+  <button class="display__button">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="64"
@@ -31,17 +31,19 @@
   $svg-size: 1.2em;
   $padding: 1.2rem 1.7rem;
 
-  .password-display {
+  $font-size: max(1.7vw, 1.6rem);
+  .display {
     @include flex-space-between;
     height: 4em;
     padding: $padding;
     background-color: var(--clr-box);
 
     &__input {
-      max-width: 60%;
+      max-width: 90%;
+      padding: 0;
       border: none;
       outline: none;
-      font-size: max(1.7vw, 1.6rem);
+      font-size: $font-size;
       color: var(--clr-white);
       font-weight: 500;
       background-color: transparent;
@@ -49,14 +51,15 @@
       @include default-transition(color);
       &:placeholder-shown {
         color: var(--clr-grey);
-        font-size: max(1.7vw, 1rem);
+        font-size: $font-size;
       }
     }
 
     &__button {
       @include flex-center;
-      background-color: transparent;
       border: none;
+      padding: 0;
+      background-color: transparent;
       cursor: pointer;
       svg {
         width: $svg-size;
@@ -71,6 +74,12 @@
         fill: var(--clr-white);
         stroke: var(--clr-white);
       }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .display {
+      padding: 1.2rem;
     }
   }
 </style>

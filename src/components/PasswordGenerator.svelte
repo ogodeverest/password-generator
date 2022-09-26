@@ -5,7 +5,7 @@
 
 <main class="password-generator">
   <h1 class="password-generator__title">Password Generator</h1>
-  <Display value="PTx1f5DaFX" />
+  <Display />
   <Form />
 </main>
 

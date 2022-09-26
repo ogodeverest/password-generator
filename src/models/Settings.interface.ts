@@ -1,7 +1,8 @@
 export interface SettingsItem {
   value: boolean;
-  pool?: number;
-  regExp?: RegExp;
+  pool: number;
+  pattern: string;
+  characters: string;
 }
 
 export default interface Settings {

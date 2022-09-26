@@ -8,7 +8,7 @@
   export let disabled: boolean = false;
 
   let containerWidth: number;
-  const thumbSize = 22.5;
+  const thumbSize: number = 22.5;
   /* Width of the value range (upper fill) will go up till the width of container minus
     the thumb size */
   /* Max and min values will be mapped to 0 - max - min

@@ -1,7 +1,8 @@
 <script lang="ts">
+  export let disabled: boolean = false;
 </script>
 
-<button type="submit" class="button">
+<button type="submit" class="button" class:disabled {disabled}>
   Generate <span class="button__icon">&#8594</span></button
 >
 
@@ -29,8 +30,8 @@
       font-size: 1.5em;
     }
 
-    &:hover,
-    &:focus {
+    &:hover:enabled,
+    &:focus:enabled {
       background-color: transparent;
       border-color: var(--clr-light-green);
       color: var(--clr-light-green);
