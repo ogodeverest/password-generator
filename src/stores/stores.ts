@@ -2,7 +2,7 @@ import { writable, derived, type Writable } from "svelte/store";
 import findStrength from "../utils/findStrength";
 import type Settings from "../models/Settings.interface";
 import PasswordGenerator from "../utils/PasswordGenerator";
-import buildPattern, { builCharacters } from "../utils/buildPattern";
+import buildPattern, { buildCharacters } from "../utils/buildPattern";
 
 const savedSettings: Settings =
   JSON.parse(localStorage.getItem("settings")) || {};
@@ -50,7 +50,7 @@ const settings: Writable<Settings> = createSettings(initialSettings);
 export const password = derived(settings, ($settings: Settings): string => {
   const passwordGenerator: PasswordGenerator = new PasswordGenerator(
     buildPattern($settings),
-    builCharacters($settings)
+    buildCharacters($settings)
   );
   return passwordGenerator.generate($settings.length.value);
 });

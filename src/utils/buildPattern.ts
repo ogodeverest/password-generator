@@ -15,3 +15,13 @@ export default function buildPattern({ length, ...rest }: Settings): string {
 
   return `^${lookaheadGroups}${range}+$`;
 }
+
+export function buildCharacters({ length, ...rest }): string {
+  return Object.values(rest)
+    .filter(({ value }: { value: boolean }) => value)
+    .reduce(
+      (current, { characters }: { characters: string }) =>
+        (current += characters),
+      ""
+    );
+}
