@@ -1,8 +1,20 @@
 <script lang="ts">
   import { password } from "../stores";
+
+  function handleSubmit(e) {
+    const formData = new FormData(e.target);
+    navigator.clipboard.writeText(formData.get("password").toString()).then(
+      () => {
+        console.log("Copying to clipboard was successful!");
+      },
+      (err) => {
+        console.error("Could not copy text: ", err);
+      }
+    );
+  }
 </script>
 
-<div class="display">
+<form class="display" on:submit|preventDefault={handleSubmit}>
   <input
     class="display__input"
     type="text"
@@ -11,7 +23,7 @@
     placeholder="P4$5W0rD!"
     readonly
   />
-  <button class="display__button">
+  <button type="submit" class="display__button">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="64"
@@ -23,7 +35,7 @@
       />
     </svg>
   </button>
-</div>
+</form>
 
 <style lang="scss">
   @import "../scss/mixins";
