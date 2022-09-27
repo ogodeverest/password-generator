@@ -2,7 +2,7 @@
   import { password } from "../stores";
 
   function handleSubmit(e: SubmitEvent) {
-    const formData = new FormData(e.target as HTMLFormElement);
+    const formData: FormData = new FormData(e.target as HTMLFormElement);
     navigator.clipboard.writeText(formData.get("password").toString()).then(
       () => {
         console.log("Copying to clipboard was successful!");
