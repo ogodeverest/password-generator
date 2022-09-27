@@ -30,7 +30,10 @@ body,
 
 #app {
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(21rem, 1fr) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(21rem, 1.2fr) minmax(
+      1rem,
+      1fr
+    );
   align-items: center;
 }
 
