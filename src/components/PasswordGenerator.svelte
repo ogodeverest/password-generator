@@ -4,7 +4,9 @@
 </script>
 
 <main class="password-generator">
-  <h1 class="password-generator__title">Password Generator</h1>
+  <header>
+    <h1 class="password-generator__title">Password Generator</h1>
+  </header>
   <Display />
   <Form />
 </main>

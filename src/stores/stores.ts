@@ -25,8 +25,8 @@ const initialSettings: Settings = {
   symbols: {
     value: false,
     pool: 42,
-    pattern: "@$!%*?&",
-    characters: "@$!%*?&",
+    pattern: "@$!%*?&#",
+    characters: "@$!%*?&#",
   },
   ...savedSettings,
 };
