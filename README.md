@@ -1,5 +1,5 @@
 
-# Space tourism
+# Password Generator
 
 Challenge from: [Fontend mentor](https://www.frontendmentor.io/)
 
