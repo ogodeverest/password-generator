@@ -28,7 +28,6 @@ export default class PasswordGenerator {
 
     while (true) {
       password = this.getString(length);
-      console.log(password);
       const test: boolean = new RegExp(this.pattern).test(password);
       if (test) return password;
     }
